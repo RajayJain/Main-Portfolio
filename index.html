@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajay Jain | Professional Data Analyst Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 antialiased">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <span class="text-sm code-font tracking-wider text-blue-400">RJ // ARCHITECTING.DATA</span>
+            <div class="flex space-x-6 text-sm font-medium text-slate-400">
+                <a href="#home" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+                <a href="#certifications" class="hover:text-white transition-colors">Certifications</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-[90vh] flex items-center border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="inline-flex items-center gap-2 px-3 py-1 text-xs code-font text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
+                <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Active Analytics Portfolio
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6">
+                Rajay Jain <span class="text-slate-500">|</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Data Analyst</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-400 max-w-3xl font-light mb-10 leading-relaxed">
+                Data Analyst leveraging a strong engineering foundation to architect robust data pipelines and interactive business intelligence solutions. Expert in transforming millions of relational points across credit risk, retail sales, and market compensation domains into executive dashboards.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-start">
+                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-lg shadow-blue-600/10">
+                    <i class="fab fa-github text-lg"></i> GitHub Profile
+                </a>
+                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-medium transition-all">
+                    <i class="fab fa-linkedin text-lg"></i> LinkedIn Profile
+                </a>
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-medium transition-all">
+                    <i class="far fa-envelope"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+            <div>
+                <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 01. Briefing</h2>
+                <h3 class="text-3xl font-bold text-white tracking-tight">Executive Profile</h3>
+            </div>
+            <div class="lg:col-span-2 space-y-6 text-slate-400 leading-relaxed">
+                <p>
+                    As a <strong class="text-white font-semibold">B.Tech engineering graduate</strong>, I bring structural discipline to complex big data. I specialize in designing and engineering end-to-end processing pipelines, safely parsing string-encoded metadata arrays, and establishing relational models.
+                </p>
+                <p>
+                    With hands-on execution navigating pipelines scaling past <strong class="text-white font-semibold">780,000+ data assets</strong>, evaluating <strong class="text-white font-semibold">$400M+ financial portfolios</strong>, and tuning analytical rendering configurations, my core strategy focuses on scaling operational visibility, optimizing query structures, and mitigating risks.
+                </p>
+                
+                <div class="pt-6">
+                    <h4 class="text-xs code-font uppercase text-slate-300 tracking-wider mb-4">Core Competency Matrix</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fas fa-database text-blue-400"></i> <span class="text-slate-300">SQL (PostgreSQL / CTEs)</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fab fa-python text-blue-400"></i> <span class="text-slate-300">Python (Pandas / NumPy)</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fas fa-chart-pie text-blue-400"></i> <span class="text-slate-300">Power BI (DAX / Modeling)</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fas fa-file-excel text-blue-400"></i> <span class="text-slate-300">Advanced Excel (XLOOKUP)</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fas fa-sliders-h text-blue-400"></i> <span class="text-slate-300">EDA & Aggregation</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                            <i class="fas fa-network-wired text-blue-400"></i> <span class="text-slate-300">Star Schema Frameworks</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 border-b border-slate-800 bg-slate-950/40">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 02. Analytics Lab</h2>
+                <h3 class="text-3xl font-bold text-white tracking-tight">Production & Experimental Portfolios</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1: Blinkit Sales Analysis -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Retail Operations</span>
+                            <i class="fas fa-shopping-basket text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Blinkit Sales Analysis Dashboard</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Engineered a dynamic Power BI data model to analyze hyper-local grocery delivery performance across shifting regional dimensions. Programmatically mapped multi-variable processing stages using Python (Pandas) to isolate category trends and automate tracking dashboards.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Automated metric generation to optimize weekly performance logs.</li>
+                            <li>Isolated delivery bottlenecks across distinct geographical areas.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Power BI</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Python (Pandas)</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Star Schema</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Advanced SQL Automation -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Database Tuning</span>
+                            <i class="fas fa-terminal text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Advanced SQL Query Optimization</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Architected relational schema definitions utilizing PostgreSQL. Formulated deeply nested Common Table Expressions (CTEs), multi-level analytical window formulas, and indexed clusters to minimize latency overheads on dense unstructured data matrices.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Reduced standard analytical execution and data retrieval times by 30%.</li>
+                            <li>Refactored raw system schemas to support seamless visual queries.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">PostgreSQL</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">CTEs</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Optimization</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Python Market Analytics -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Big Data Engineering</span>
+                            <i class="fab fa-python text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Python Global Job Market Analytics</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Ingested and wrangled a massive global dataset exceeding 780,000+ technical job posting records using the Hugging Face API ecosystem. Fabricated data-cleansing pipelines using abstract syntax trees to securely isolate string arrays into operational schemas.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Maintained 0% data conversion errors via structural validation pipelines.</li>
+                            <li>Rendered complex categorical trends via grouped multi-variable Seaborn logs.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Pandas / NumPy</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Hugging Face API</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Seaborn / Matplotlib</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/Python_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Power BI Market Dashboard -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Business Intelligence</span>
+                            <i class="fas fa-chart-bar text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Power BI Global Market Intelligence</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Engineered an interactive dashboard solution evaluating salary structures across a pool of 780,000+ technology industry points. Formulated structured Star Schema relationships and custom DAX measures to cleanly reflect multi-axis filtering metrics.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Mapped a 20%+ tracking salary variance scale across target markets.</li>
+                            <li>Engineered highly interactive slicing matrix views for end-users.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Power BI Dashboard</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">DAX Formulae</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Data Modeling</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/Power_BI_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Bank Loan Risk Analysis -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Risk Management</span>
+                            <i class="fas fa-hand-holding-usd text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Credit Risk Portfolio Dashboard</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Evaluated a comprehensive credit lending infrastructure representing a $400M+ active portfolio value spanning over 35,000+ client accounts. Built structural classification pipelines to isolate non-performing loans and establish risk tracking.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Isolated a clear 13.5% non-performing loan (NPL) rate variance.</li>
+                            <li>Mapped critical Debt-to-Income (DTI) bounds to reduce losses by 12%.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Risk Analytics</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">KPI Structuring</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Portfolio Security</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/Bank-Loan-Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Walmart Sales Predictive Metrics -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Retail Revenue</span>
+                            <i class="fas fa-store text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Walmart Sales Trend Forecasting</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Modelled historical commercial retail parameters across 45 distinct geographical store nodes. Aggregated complex macroeconomic trends (including unemployment indexes and localized fuel cost charts) to evaluate sales seasonality variables.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Identified a 10%+ structural surge during specific seasonal promotional weeks.</li>
+                            <li>Isolated key macroeconomic correlations with weekly store revenues.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Sales Analytics</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Seasonality Tracking</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Macro Aggregations</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/Walmart_Sales_Data_Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 7: Excel Salary Workforce Intelligence -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between md:col-span-2">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Workforce Optimization</span>
+                            <i class="fas fa-file-excel text-slate-600 text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-white mb-2">Workforce Intelligence & Compensation Dashboard</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Structured a robust HR compensation tracking framework aggregating granular compensation bounds across 10,000+ technical practitioners and 12+ industry specialties. Deployed automated calculation loops utilizing XLOOKUP models and nested logic matrices.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Accelerated structural salary review administration workflows by 40%.</li>
+                            <li>Integrated responsive analytical slicer blocks for clean corporate navigation.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Advanced Excel</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">XLOOKUP Matrices</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Pivot Reporting</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/Excel_Salary_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 03. Validation</h2>
+            <h3 class="text-3xl font-bold text-white tracking-tight">Verified Technical Credentials</h3>
+        </div>
+
+        <div class="overflow-hidden border border-slate-800 rounded bg-slate-900/60">
+            <div class="min-w-full divide-y divide-slate-800">
+                <!-- Cert 1: Google -->
+                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/20 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="p-2 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400 mt-1">
+                            <i class="fab fa-google"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-semibold text-white">Google Data Analytics Professional Certificate</h4>
+                            <p class="text-sm text-slate-400">Rigorous end-to-end curriculum charting deep data processing, relational architectures, cleaning logic, and descriptive metric storytelling dashboards.</p>
+                        </div>
+                    </div>
+                    <div class="sm:text-right shrink-0">
+                        <a href="https://coursera.org/share/dd4948e7bc59c858df5fbcd702e8c7b7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all border border-slate-700">
+                            VERIFY CREDENTIAL <i class="fas fa-external-link-alt ml-1.5 text-[9px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cert 2: LinkedIn Learning -->
+                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/20 transition-colors">
+                    <div class="flex items-start gap-4">
+                        <div class="p-2 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400 mt-1">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-base font-semibold text-white">Advanced SQL Master Class</h4>
+                            <p class="text-sm text-slate-400">Deep-dive technical querying validation involving advanced optimization algorithms, layered windows, and transaction schema tuning environments.</p>
+                        </div>
+                    </div>
+                    <div class="sm:text-right shrink-0">
+                        <a href="https://www.linkedin.com/learning/certificates/f1bd61a875571d5aa08770680905760586a4c718894e38b811fd8541f2e45d53?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all border border-slate-700">
+                            VERIFY CREDENTIAL <i class="fas fa-external-link-alt ml-1.5 text-[9px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div>
+                <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 04. Transmission</h2>
+                <h3 class="text-3xl font-bold text-white tracking-tight mb-4">Open Communication</h3>
+                <p class="text-sm text-slate-400 leading-relaxed mb-8">
+                    Let's connect if you have data architectures to implement, pipeline performance logs to optimize, or an opening for a technical Data Analyst role.
+                </p>
+                <div class="space-y-4">
+                    <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-base w-5 text-blue-400"></i> github.com/RajayJain
+                    </a>
+                    <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-base w-5 text-blue-400"></i> linkedin.com/in/rajayjain
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-2">
+                <form action="#" method="POST" class="space-y-5" onsubmit="event.preventDefault(); alert('Message transmission simulated successfully.');">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="name" class="block text-xs code-font uppercase text-slate-400 mb-2">Name</label>
+                            <input type="text" id="name" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-3 text-sm text-slate-200 placeholder-slate-700 focus:outline-none focus:border-blue-500 transition-colors" placeholder="First Last">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-xs code-font uppercase text-slate-400 mb-2">Email Address</label>
+                            <input type="email" id="email" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-3 text-sm text-slate-200 placeholder-slate-700 focus:outline-none focus:border-blue-500 transition-colors" placeholder="name@example.com">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-xs code-font uppercase text-slate-400 mb-2">Analytical Requirements / Project Scope</label>
+                        <textarea id="message" rows="5" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-3 text-sm text-slate-200 placeholder-slate-700 focus:outline-none focus:border-blue-500 transition-colors" placeholder="Outline operational pipelines, data schemas, or professional details..."></textarea>
+                    </div>
+                    <div class="text-right">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-colors shadow-lg shadow-blue-600/10">
+                            Transmit Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs code-font text-slate-500">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span>&copy; 2026 Rajay Jain. All rights reserved.</span>
+            <span>Built for Scalable Operational Data Architecture.</span>
+        </div>
+    </footer>
+
+</body>
+</html>
