@@ -17,28 +17,63 @@
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
+        
+        /* Smooth Custom Keyframe Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+        
+        /* Micro-interactions for grid cards */
+        .hover-card-trigger {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hover-card-trigger:hover {
+            transform: translateY(-6px);
+            border-color: rgba(59, 130, 246, 0.5) !important;
+            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased">
+<body class="bg-slate-900 text-slate-100 antialiased opacity-0 animate-fade-in">
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <span class="text-sm code-font tracking-wider text-blue-400">RJ // ARCHITECTING.DATA</span>
+            <span class="text-sm code-font tracking-wider text-blue-400 hover:text-blue-300 transition-colors cursor-default">RJ // ARCHITECTING.DATA</span>
             <div class="flex space-x-6 text-sm font-medium text-slate-400">
-                <a href="#home" class="hover:text-white transition-colors">Home</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#certifications" class="hover:text-white transition-colors">Certifications</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+                <a href="#home" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">Home</a>
+                <a href="#about" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">About</a>
+                <a href="#projects" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">Projects</a>
+                <a href="#certifications" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">Certifications</a>
+                <a href="#contact" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="min-h-[90vh] flex items-center border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="inline-flex items-center gap-2 px-3 py-1 text-xs code-font text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+            <div class="inline-flex items-center gap-2 px-3 py-1 text-xs code-font text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6 transition-all duration-300 hover:bg-blue-500/20">
                 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Active Analytics Portfolio
             </div>
             <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-white mb-6">
@@ -48,13 +83,13 @@
                 Data Analyst leveraging a strong engineering foundation to architect robust data pipelines and interactive business intelligence solutions. Expert in transforming millions of relational points across credit risk, retail sales, and market compensation domains into executive dashboards.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-start">
-                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-lg shadow-blue-600/10">
+                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20">
                     <i class="fab fa-github text-lg"></i> GitHub Profile
                 </a>
-                <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-medium transition-all">
+                <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5">
                     <i class="fab fa-linkedin text-lg"></i> LinkedIn Profile
                 </a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-medium transition-all">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5">
                     <i class="far fa-envelope"></i> Get In Touch
                 </a>
             </div>
@@ -79,22 +114,22 @@
                 <div class="pt-6">
                     <h4 class="text-xs code-font uppercase text-slate-300 tracking-wider mb-4">Core Competency Matrix</h4>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fas fa-database text-blue-400"></i> <span class="text-slate-300">SQL (PostgreSQL / CTEs)</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fab fa-python text-blue-400"></i> <span class="text-slate-300">Python (Pandas / NumPy)</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fas fa-chart-pie text-blue-400"></i> <span class="text-slate-300">Power BI (DAX / Modeling)</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fas fa-file-excel text-blue-400"></i> <span class="text-slate-300">Advanced Excel (XLOOKUP)</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fas fa-sliders-h text-blue-400"></i> <span class="text-slate-300">EDA & Aggregation</span>
                         </div>
-                        <div class="flex items-center gap-3 p-3 bg-slate-800/40 border border-slate-800/80 rounded">
+                        <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fas fa-network-wired text-blue-400"></i> <span class="text-slate-300">Star Schema Frameworks</span>
                         </div>
                     </div>
@@ -113,7 +148,7 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Project 1: Blinkit Sales Analysis -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Retail Operations</span>
@@ -135,15 +170,15 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Star Schema</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
-                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1 transition-transform group-hover:translate-x-1"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 2: Advanced SQL Automation -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Database Tuning</span>
@@ -165,15 +200,15 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Optimization</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
-                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1 transition-transform group-hover:translate-x-1"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3: Python Market Analytics -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Big Data Engineering</span>
@@ -195,15 +230,15 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Seaborn / Matplotlib</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain/Python_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
-                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            <a href="https://github.com/RajayJain/Python_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1 transition-transform group-hover:translate-x-1"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 4: Power BI Market Dashboard -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Business Intelligence</span>
@@ -225,15 +260,15 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Data Modeling</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain/Power_BI_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
-                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
+                            <a href="https://github.com/RajayJain/Power_BI_Data_Analytics" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
+                                <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1 transition-transform group-hover:translate-x-1"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 5: Bank Loan Risk Analysis -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Risk Management</span>
@@ -255,7 +290,7 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Portfolio Security</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain/Bank-Loan-Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                            <a href="https://github.com/RajayJain/Bank-Loan-Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
                                 <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
                             </a>
                         </div>
@@ -263,7 +298,7 @@
                 </div>
 
                 <!-- Project 6: Walmart Sales Predictive Metrics -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Retail Revenue</span>
@@ -285,7 +320,7 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Macro Aggregations</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain/Walmart_Sales_Data_Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                            <a href="https://github.com/RajayJain/Walmart_Sales_Data_Analysis" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
                                 <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
                             </a>
                         </div>
@@ -293,7 +328,7 @@
                 </div>
 
                 <!-- Project 7: Excel Salary Workforce Intelligence -->
-                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 hover:border-slate-700 transition-all flex flex-col justify-between md:col-span-2">
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between md:col-span-2 hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
                             <span class="text-xs code-font text-blue-400">Workforce Optimization</span>
@@ -315,7 +350,7 @@
                             <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Pivot Reporting</span>
                         </div>
                         <div class="flex gap-4">
-                            <a href="https://github.com/RajayJain/Excel_Salary_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors">
+                            <a href="https://github.com/RajayJain/Excel_Salary_Dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
                                 <i class="fab fa-github"></i> REPO <i class="fas fa-arrow-right text-[8px] ml-1"></i>
                             </a>
                         </div>
@@ -335,7 +370,7 @@
         <div class="overflow-hidden border border-slate-800 rounded bg-slate-900/60">
             <div class="min-w-full divide-y divide-slate-800">
                 <!-- Cert 1: Google -->
-                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/20 transition-colors">
+                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition-colors duration-300">
                     <div class="flex items-start gap-4">
                         <div class="p-2 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400 mt-1">
                             <i class="fab fa-google"></i>
@@ -346,14 +381,14 @@
                         </div>
                     </div>
                     <div class="sm:text-right shrink-0">
-                        <a href="https://coursera.org/share/dd4948e7bc59c858df5fbcd702e8c7b7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all border border-slate-700">
+                        <a href="https://coursera.org/share/dd4948e7bc59c858df5fbcd702e8c7b7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all duration-300 border border-slate-700 transform hover:-translate-y-0.5">
                             VERIFY CREDENTIAL <i class="fas fa-external-link-alt ml-1.5 text-[9px]"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Cert 2: LinkedIn Learning -->
-                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/20 transition-colors">
+                <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-slate-800/40 transition-colors duration-300">
                     <div class="flex items-start gap-4">
                         <div class="p-2 bg-blue-500/10 rounded border border-blue-500/20 text-blue-400 mt-1">
                             <i class="fab fa-linkedin-in"></i>
@@ -364,7 +399,7 @@
                         </div>
                     </div>
                     <div class="sm:text-right shrink-0">
-                        <a href="https://www.linkedin.com/learning/certificates/f1bd61a875571d5aa08770680905760586a4c718894e38b811fd8541f2e45d53?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all border border-slate-700">
+                        <a href="https://www.linkedin.com/learning/certificates/f1bd61a875571d5aa08770680905760586a4c718894e38b811fd8541f2e45d53?trk=share_certificate" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3 py-1.5 bg-slate-800 text-xs code-font text-slate-300 hover:text-white hover:bg-slate-700 rounded transition-all duration-300 border border-slate-700 transform hover:-translate-y-0.5">
                             VERIFY CREDENTIAL <i class="fas fa-external-link-alt ml-1.5 text-[9px]"></i>
                         </a>
                     </div>
@@ -383,11 +418,11 @@
                     Let's connect if you have data architectures to implement, pipeline performance logs to optimize, or an opening for a technical Data Analyst role.
                 </p>
                 <div class="space-y-4">
-                    <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors">
-                        <i class="fab fa-github text-base w-5 text-blue-400"></i> github.com/RajayJain
+                    <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors group">
+                        <i class="fab fa-github text-base w-5 text-blue-400 group-hover:scale-110 transition-transform"></i> github.com/RajayJain
                     </a>
-                    <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors">
-                        <i class="fab fa-linkedin text-base w-5 text-blue-400"></i> linkedin.com/in/rajay-ajay-jain-a3abb4168
+                    <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 text-sm text-slate-400 hover:text-white transition-colors group">
+                        <i class="fab fa-linkedin text-base w-5 text-blue-400 group-hover:scale-110 transition-transform"></i> linkedin.com/in/rajay-ajay-jain-a3abb4168
                     </a>
                 </div>
             </div>
@@ -409,7 +444,7 @@
                         <textarea id="message" rows="5" required class="w-full bg-slate-950 border border-slate-800 rounded px-4 py-3 text-sm text-slate-200 placeholder-slate-700 focus:outline-none focus:border-blue-500 transition-colors" placeholder="Outline operational pipelines, data schemas, or professional details..."></textarea>
                     </div>
                     <div class="text-right">
-                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-colors shadow-lg shadow-blue-600/10">
+                        <button type="submit" class="w-full sm:w-auto px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm transition-colors shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20 transform hover:-translate-y-0.5 duration-300">
                             Transmit Message
                         </button>
                     </div>
