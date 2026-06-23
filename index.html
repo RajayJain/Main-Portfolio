@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html_with_moving_animations = """<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -13,16 +13,17 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
         .code-font {
             font-family: 'JetBrains Mono', monospace;
         }
         
-        /* Smooth Custom Keyframe Animations */
+        /* Advanced Moving & Ambient Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(24px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -35,6 +36,18 @@
             to { opacity: 1; }
         }
 
+        @keyframes drift {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.95); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+
+        @keyframes gridMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
         .animate-fade-in-up {
             animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
@@ -42,24 +55,38 @@
         .animate-fade-in {
             animation: fadeIn 1s ease-out forwards;
         }
+
+        /* Moving Grid Background Element */
+        .moving-grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(30, 41, 59, 0.5) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(30, 41, 59, 0.5) 1px, transparent 1px);
+            animation: gridMove 8s linear infinite;
+        }
         
-        /* Micro-interactions for grid cards */
+        /* Smooth Fluid Card Mechanics */
         .hover-card-trigger {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .hover-card-trigger:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px) scale(1.01);
             border-color: rgba(59, 130, 246, 0.5) !important;
-            box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+            box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.2);
         }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 antialiased opacity-0 animate-fade-in">
+<body class="bg-slate-900 text-slate-100 antialiased opacity-0 animate-fade-in relative">
+
+    <!-- Moving Ambient Orbs in Background -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-blue-500/10 blur-[120px]" style="animation: drift 20s ease-in-out infinite;"></div>
+        <div class="absolute bottom-[20%] right-[-10%] w-[45vw] h-[45vw] rounded-full bg-indigo-500/5 blur-[140px]" style="animation: drift 25s ease-in-out infinite 2s;"></div>
+    </div>
 
     <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800 transition-all duration-300">
+    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <span class="text-sm code-font tracking-wider text-blue-400 hover:text-blue-300 transition-colors cursor-default">RJ // ARCHITECTING.DATA</span>
+            <span class="text-sm code-font tracking-wider text-blue-400 cursor-default">RJ // ARCHITECTING.DATA</span>
             <div class="flex space-x-6 text-sm font-medium text-slate-400">
                 <a href="#home" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">Home</a>
                 <a href="#about" class="hover:text-white transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 hover:after:w-full after:bg-blue-500 after:transition-all pb-1">About</a>
@@ -70,9 +97,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-[90vh] flex items-center border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
+    <!-- Hero Section with Moving Grid Overlay -->
+    <section id="home" class="min-h-[90vh] flex items-center border-b border-slate-800 bg-gradient-to-b from-slate-900 to-slate-950 relative overflow-hidden">
+        <div class="absolute inset-0 moving-grid-bg opacity-40 z-0"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
             <div class="inline-flex items-center gap-2 px-3 py-1 text-xs code-font text-blue-400 bg-blue-500/10 rounded-full border border-blue-500/20 mb-6 transition-all duration-300 hover:bg-blue-500/20">
                 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span> Active Analytics Portfolio
             </div>
@@ -83,13 +111,13 @@
                 Data Analyst leveraging a strong engineering foundation to architect robust data pipelines and interactive business intelligence solutions. Expert in transforming millions of relational points across credit risk, retail sales, and market compensation domains into executive dashboards.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-start">
-                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20">
+                <a href="https://github.com/RajayJain" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-blue-600/10 hover:shadow-blue-600/20">
                     <i class="fab fa-github text-lg"></i> GitHub Profile
                 </a>
-                <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5">
+                <a href="https://www.linkedin.com/in/rajay-ajay-jain-a3abb4168" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-700 bg-slate-800/50 hover:bg-slate-800 text-slate-300 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-1">
                     <i class="fab fa-linkedin text-lg"></i> LinkedIn Profile
                 </a>
-                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5">
+                <a href="#contact" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded border border-slate-800 bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white font-medium transition-all duration-300 transform hover:-translate-y-1">
                     <i class="far fa-envelope"></i> Get In Touch
                 </a>
             </div>
@@ -97,7 +125,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             <div>
                 <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 01. Briefing</h2>
@@ -115,7 +143,7 @@
                     <h4 class="text-xs code-font uppercase text-slate-300 tracking-wider mb-4">Core Competency Matrix</h4>
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
                         <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
-                            <i class="fas fa-database text-blue-400"></i> <span class="text-slate-300">SQL (PostgreSQL / CTEs)</span>
+                            <i class="fas fa-database text-blue-400 animate-pulse"></i> <span class="text-slate-300">SQL (PostgreSQL / CTEs)</span>
                         </div>
                         <div class="flex items-center gap-3 p-3 bg-slate-800/20 border border-slate-800/80 rounded transition-all duration-300 hover:bg-slate-800/50 hover:border-slate-700">
                             <i class="fab fa-python text-blue-400"></i> <span class="text-slate-300">Python (Pandas / NumPy)</span>
@@ -139,7 +167,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-24 border-b border-slate-800 bg-slate-950/40">
+    <section id="projects" class="py-24 border-b border-slate-800 bg-slate-950/40 relative z-10">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
                 <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 02. Analytics Lab</h2>
@@ -147,7 +175,40 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Project 1: Blinkit Sales Analysis -->
+                <!-- New Project: Data Job Market Analytics -->
+                <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger md:col-span-2 border-l-2 border-l-blue-500">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-xs code-font text-blue-400">Featured Database Strategy</span>
+                            <span class="flex h-2 w-2 relative">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            </span>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Data Job Market Analytics Infrastructure</h4>
+                        <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                            Query-engineered a comprehensive PostgreSQL database analyzing a dense relational footprint of 780,000+ technical job posting records. Formulated structured Common Table Expressions (CTEs), multi-layered analytical subqueries, and advanced optimizations to isolate top-paying configurations and eliminate redundant scanning structures.
+                        </p>
+                        <ul class="text-xs text-slate-500 list-disc list-inside space-y-1 mb-6">
+                            <li>Accelerated multi-axis query processing and rendering efficiencies by 30%.</li>
+                            <li>Engineered programmatic filters tracking tech-stack combinations (Python/SQL/AWS).</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">PostgreSQL</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">CTEs & Multi-Joins</span>
+                            <span class="text-xs code-font bg-slate-900 px-2 py-1 rounded text-slate-300">Performance Tuning</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/RajayJain/SQL_PROJECT_DATA_JOB_ANALYSIS_1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs code-font text-white hover:text-blue-400 transition-colors group">
+                                <i class="fab fa-github text-sm"></i> SQL SOURCE REPO <i class="fas fa-arrow-right text-[8px] ml-1 transition-transform group-hover:translate-x-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project: Blinkit Sales Analysis -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -177,7 +238,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Advanced SQL Automation -->
+                <!-- Project: Advanced SQL Automation -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -207,7 +268,7 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Python Market Analytics -->
+                <!-- Project: Python Market Analytics -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -237,7 +298,7 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Power BI Market Dashboard -->
+                <!-- Project: Power BI Market Dashboard -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -267,7 +328,7 @@
                     </div>
                 </div>
 
-                <!-- Project 5: Bank Loan Risk Analysis -->
+                <!-- Project: Bank Loan Risk Analysis -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -297,7 +358,7 @@
                     </div>
                 </div>
 
-                <!-- Project 6: Walmart Sales Predictive Metrics -->
+                <!-- Project: Walmart Sales Predictive Metrics -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -327,7 +388,7 @@
                     </div>
                 </div>
 
-                <!-- Project 7: Excel Salary Workforce Intelligence -->
+                <!-- Project: Excel Salary Workforce Intelligence -->
                 <div class="bg-slate-800/30 border border-slate-800 rounded p-6 flex flex-col justify-between md:col-span-2 hover-card-trigger">
                     <div>
                         <div class="flex items-center justify-between mb-4">
@@ -361,7 +422,7 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="certifications" class="py-24 border-b border-slate-800 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="mb-12">
             <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 03. Validation</h2>
             <h3 class="text-3xl font-bold text-white tracking-tight">Verified Technical Credentials</h3>
@@ -409,7 +470,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" class="py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div>
                 <h2 class="text-xs code-font uppercase tracking-widest text-blue-400 mb-2">// 04. Transmission</h2>
@@ -454,7 +515,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs code-font text-slate-500">
+    <footer class="border-t border-slate-800 bg-slate-950 py-8 text-center text-xs code-font text-slate-500 relative z-10">
         <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
             <span>&copy; 2026 Rajay Jain. All rights reserved.</span>
             <span>Built for Scalable Operational Data Architecture.</span>
@@ -462,4 +523,8 @@
     </footer>
 
 </body>
-</html>
+</html>"""
+
+with open("Portfolio_Website_Ultimate.html", "w", encoding="utf-8") as file:
+    file.write(html_with_moving_animations)
+print("Ultimate animated file generated.")
